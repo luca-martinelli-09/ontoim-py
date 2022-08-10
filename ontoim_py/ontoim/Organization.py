@@ -8,7 +8,6 @@ from ..ns import *
 
 if TYPE_CHECKING:
     from ontopia_py.clv.Address import Address
-    from ontopia_py.cpsv.Service import Service
     from rdflib import Graph, Literal
 
     from .Employees import Employees
@@ -21,7 +20,6 @@ class Organization(Organization):
     hasEmployees: List[Employees] = None
     hasHeritage: List[Heritage] = None
     hasLocalUnitAddress: List[Address] = None
-    providesService: List[Service] = None
     endActivityDate: Literal = None
     liquidationDate: Literal = None
     bankruptcyDate: Literal = None

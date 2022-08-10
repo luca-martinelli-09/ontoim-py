@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, List
 
+from ontopia_py.her.AcademicDiscipline import AcademicDiscipline
 from ontopia_py.l0.Activity import Activity
 
 from ..ns import *
@@ -28,6 +29,7 @@ class Course(Activity):
     description: List[Literal] = None
     courseCode: Literal = None
     durationHours: Literal = None
+    hasAcademicDiscipline: List[AcademicDiscipline] = None
 
     def _addProperties(self, g: Graph):
         super()._addProperties(g)
@@ -55,6 +57,11 @@ class Course(Activity):
             for situatedInClassroom in self.situatedInClassroom:
                 g.add(
                     (self.uriRef, ONTOIM["situatedInClassroom"], situatedInClassroom.uriRef))
+        
+        if self.hasAcademicDiscipline:
+            for hasAcademicDiscipline in self.hasAcademicDiscipline:
+                g.add(
+                    (self.uriRef, HER["hasAcademicDiscipline"], hasAcademicDiscipline.uriRef))
 
         if self.name:
             for name in self.name:
