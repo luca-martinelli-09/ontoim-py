@@ -7,7 +7,7 @@ from ontopia_py.l0.Activity import Activity
 from ..ns import *
 
 if TYPE_CHECKING:
-    from ontopia_py.clv.SpatialObject import SpatialObject
+    from ontopia_py.clv.Feature import Feature
     from ontopia_py.cpv.Family import Family
     from ontopia_py.cpv.Person import Person
     from ontopia_py.ti.TemporalEntity import TemporalEntity
@@ -19,7 +19,7 @@ class DemographicObservation(Activity):
 
     hasTemporalEntity: TemporalEntity = None
     hasDemographicReference: Union(Person, Family) = None
-    hasSpatialDelimitation: SpatialObject = None
+    hasSpatialCoverage: Feature = None
     observationValue: Literal = None
 
     def _addProperties(self, g: Graph):
@@ -33,9 +33,9 @@ class DemographicObservation(Activity):
             g.add((self.uriRef, ONTOIM["hasDemographicReference"],
                   self.hasDemographicReference.uriRef))
 
-        if self.hasSpatialDelimitation:
+        if self.hasSpatialCoverage:
             g.add(
-                (self.uriRef, ONTOIM["hasSpatialDelimitation"], self.hasSpatialDelimitation.uriRef))
+                (self.uriRef, CLV["hasSpatialCoverage"], self.hasSpatialCoverage.uriRef))
 
         if self.observationValue:
             g.add(

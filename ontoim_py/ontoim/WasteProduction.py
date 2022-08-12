@@ -7,7 +7,7 @@ from ontopia_py.l0.Activity import Activity
 from ..ns import *
 
 if TYPE_CHECKING:
-    from ontopia_py.clv.SpatialObject import SpatialObject
+    from ontopia_py.clv.Feature import Feature
     from ontopia_py.mu.Value import Value
     from ontopia_py.ti.TemporalEntity import TemporalEntity
     from rdflib import Graph
@@ -20,7 +20,7 @@ class WasteProduction(Activity):
 
     hasValue: List[Value] = None
     hasTemporalEntity: TemporalEntity = None
-    hasSpatialDelimitation: SpatialObject = None
+    hasSpatialCoverage: Feature = None
     hasWasteCategory: WasteCategory = None
 
     def _addProperties(self, g: Graph):
@@ -34,9 +34,9 @@ class WasteProduction(Activity):
             g.add(
                 (self.uriRef, TI["hasTemporalEntity"], self.hasTemporalEntity.uriRef))
 
-        if self.hasSpatialDelimitation:
+        if self.hasSpatialCoverage:
             g.add(
-                (self.uriRef, ONTOIM["hasSpatialDelimitation"], self.hasSpatialDelimitation.uriRef))
+                (self.uriRef, CLV["hasSpatialCoverage"], self.hasSpatialCoverage.uriRef))
 
         if self.hasWasteCategory:
             g.add(
