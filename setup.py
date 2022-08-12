@@ -54,5 +54,5 @@ setup(
     packages=find_packages(exclude=['tests*']),
     data_files=[('', ['LICENSE'])],
     python_requires='>=3.7, <4',
-    install_requires=['rdflib>=6.0.0', 'ontopia_py'],
+    install_requires=['rdflib>=6.0.0', 'ontopia_py>=0.1.0'],
 )
