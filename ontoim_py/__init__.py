@@ -1,7 +1,7 @@
 from .ns import *
 from ontopia_py import createGraph as cg, saveGraph
 
-VERSION = (0, 0, 1)
+VERSION = (0, 0, 2)
 
 __author__ = 'Luca Martinelli'
 __email__ = 'martinelliluca98@gmail.com'
@@ -38,3 +38,5 @@ def createGraph():
     g.bind("vehiclecategories", VEHICLE_CATEGORIES)
     g.bind("wastecategories", WASTE_CATEGORIES)
     g.bind("weatherconditions", WEATHER_CONDITIONS)
+
+    return g
