@@ -11,8 +11,8 @@ if TYPE_CHECKING:
     from .HospitalDepartment import HospitalDepartment
 
 
-class Heritage(Facility):
-    __type__ = ONTOIM["Heritage"]
+class Hospital(Facility):
+    __type__ = ONTOIM["Hospital"]
 
     hasHospitalDepartment: List[HospitalDepartment] = None
     totalNumberOfBeds: Literal = None

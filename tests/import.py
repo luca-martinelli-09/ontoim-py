@@ -1,2 +1,4 @@
 # %%
-from ontoim_py import *
+from ontoim_py.ontoim import *
+
+# %%
