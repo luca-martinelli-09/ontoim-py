@@ -1,5 +1,4 @@
 from __future__ import annotations
-from msilib.schema import Feature
 
 from typing import TYPE_CHECKING
 
