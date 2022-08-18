@@ -41,11 +41,6 @@ class Organization(Organization):
                 g.add(
                     (self.uriRef, ONTOIM["hasLocalUnitAddress"], hasLocalUnitAddress.uriRef))
 
-        if self.providesService:
-            for providesService in self.providesService:
-                g.add(
-                    (self.uriRef, ONTOIM["providesService"], providesService.uriRef))
-
         if self.endActivityDate:
             g.add(
                 (self.uriRef, ONTOIM["endActivityDate"], self.endActivityDate))
