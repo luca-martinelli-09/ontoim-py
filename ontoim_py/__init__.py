@@ -24,7 +24,7 @@ def createGraph():
     g.bind("companydemographiccategories", COMPANY_DEMOGRAPHIC_CATEGORIES)
     g.bind("heritagetypes", HERITAGE_TYPES)
     g.bind("involvedpersonstatuses", INVOLVED_PERSON_STATUSES)
-    g.bind("landregistrycategories", LAND_REGISTRY_CATEGORIES)
+    g.bind("cadastralcategories", CADASTRAL_CATEGORIES)
     g.bind("organizationsections", ORGANIZATION_SECTIONS)
     g.bind("pavementtypes", PAVEMENT_TYPES)
     g.bind("revelationunits", REVELATION_UNITS)
