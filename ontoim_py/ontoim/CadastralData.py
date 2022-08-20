@@ -27,21 +27,6 @@ class CadastralData(Object):
             g.add(
                 (self.uriRef, ONTOIM["hasCadastralCategory"], self.hasCadastralCategory.uriRef))
 
-        if self.hasMembers:
-            for hasMembers in self.hasMembers:
-                g.add(
-                    (self.uriRef, ONTOIM["hasMembers"], hasMembers.uriRef))
-
-        if self.hasReferent:
-            for hasReferent in self.hasReferent:
-                g.add(
-                    (self.uriRef, ONTOIM["hasReferent"], hasReferent.uriRef))
-
-        if self.hasSubscription:
-            for hasSubscription in self.hasSubscription:
-                g.add(
-                    (self.uriRef, ONTOIM["hasSubscription"], hasSubscription.uriRef))
-
         if self.map:
             g.add((self.uriRef, ONTOIM["map"], self.map))
 
