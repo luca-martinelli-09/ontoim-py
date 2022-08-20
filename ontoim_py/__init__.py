@@ -1,7 +1,7 @@
 from .ns import *
 from ontopia_py import createGraph as cg, saveGraph
 
-VERSION = (0, 0, 8)
+VERSION = (0, 0, 9)
 
 __author__ = 'Luca Martinelli'
 __email__ = 'martinelliluca98@gmail.com'
