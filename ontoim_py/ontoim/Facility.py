@@ -23,7 +23,7 @@ class Facility(PointOfInterest):
     hasOfferedService: List[OSDFeature] = None
     concessedWithProcedure: List[Procedure] = None
     ownedBy: List[Organization] = None
-    hasCadastralData: CadastralData = None
+    hasCadastralData: List[CadastralData] = None
     hasOnlineContactPoint: OnlineContactPoint = None
     hasPhysicalContactPoint: PhysicalContactPoint = None
 
@@ -45,8 +45,9 @@ class Facility(PointOfInterest):
                 g.add((self.uriRef, ONTOIM["ownedBy"], ownedBy.uriRef))
 
         if self.hasCadastralData:
-            g.add(
-                (self.uriRef, ONTOIM["hasCadastralData"], self.hasCadastralData.uriRef))
+            for hasCadastralData in self.hasCadastralData:
+                g.add(
+                    (self.uriRef, ONTOIM["hasCadastralData"], hasCadastralData.uriRef))
 
         if self.hasOnlineContactPoint:
             g.add(
