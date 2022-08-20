@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 class CadastralData(Object):
     __type__ = ONTOIM["CadastralData"]
 
-    hasCadastralCategory: List[CadastralCategory] = None
+    hasCadastralCategory: CadastralCategory = None
     map: Literal = None
     sheet: Literal = None
     subordinate: Literal = None
