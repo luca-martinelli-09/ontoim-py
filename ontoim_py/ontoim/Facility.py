@@ -9,6 +9,7 @@ from ..ns import *
 if TYPE_CHECKING:
     from ontopia_py.acco.OSDFeature import OSDFeature
     from ontopia_py.cov.Organization import Organization
+    from ontopia_py.l0.Agent import Agent
     from ontopia_py.publiccontract.Procedure import Procedure
     from ontopia_py.sm.OnlineContactPoint import OnlineContactPoint
     from ontopia_py.sm.PhysicalContactPoint import PhysicalContactPoint
@@ -23,6 +24,7 @@ class Facility(PointOfInterest):
     hasOfferedService: List[OSDFeature] = None
     concessedWithProcedure: List[Procedure] = None
     ownedBy: List[Organization] = None
+    concessedTo: List[Agent] = None
     hasCadastralData: List[CadastralData] = None
     hasOnlineContactPoint: OnlineContactPoint = None
     hasPhysicalContactPoint: PhysicalContactPoint = None
@@ -39,6 +41,10 @@ class Facility(PointOfInterest):
             for concessedWithProcedure in self.concessedWithProcedure:
                 g.add(
                     (self.uriRef, ONTOIM["concessedWithProcedure"], concessedWithProcedure.uriRef))
+
+        if self.concessedTo:
+            for concessedTo in self.concessedTo:
+                g.add((self.uriRef, ONTOIM["concessedTo"], concessedTo.uriRef))
 
         if self.ownedBy:
             for ownedBy in self.ownedBy:
