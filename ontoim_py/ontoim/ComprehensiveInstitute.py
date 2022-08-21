@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, List
 
 from ontopia_py.poi.MultiplePointOfInterest import MultiplePointOfInterest
+from ontopia_py.cov.PublicOrganization import PublicOrganization
 
 from ..ns import *
 from .School import School
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
     from rdflib import Graph
 
 
-class ComprehensiveInstitute(School, MultiplePointOfInterest):
+class ComprehensiveInstitute(School, MultiplePointOfInterest, PublicOrganization):
     __type__ = ONTOIM["ComprehensiveInstitute"]
 
     includesSchool: List[School] = None
