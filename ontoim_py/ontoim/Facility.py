@@ -40,10 +40,6 @@ class Facility(PointOfInterest):
                 g.add(
                     (self.uriRef, ONTOIM["concessedWithAct"], concessedWithAct.uriRef))
 
-        if self.concessedTo:
-            for concessedTo in self.concessedTo:
-                g.add((self.uriRef, ONTOIM["concessedTo"], concessedTo.uriRef))
-
         if self.ownedBy:
             for ownedBy in self.ownedBy:
                 g.add((self.uriRef, ONTOIM["ownedBy"], ownedBy.uriRef))
