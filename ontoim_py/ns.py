@@ -28,3 +28,4 @@ SCHOOL_TYPES = Namespace("https://w3od.org/ontoim/controlled-vocabulary/school-t
 VEHICLE_CATEGORIES = Namespace("https://w3od.org/ontoim/controlled-vocabulary/vehicle-categories/")
 WASTE_CATEGORIES = Namespace("https://w3od.org/ontoim/controlled-vocabulary/waste-categories/")
 WEATHER_CONDITIONS = Namespace("https://w3od.org/ontoim/controlled-vocabulary/weather-conditions/")
+CONCESSION_ACT_TYPES = Namespace("https://w3od.org/ontoim/controlled-vocabulary/concession-act-types/")

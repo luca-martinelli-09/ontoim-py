@@ -9,22 +9,20 @@ from ..ns import *
 if TYPE_CHECKING:
     from ontopia_py.acco.OSDFeature import OSDFeature
     from ontopia_py.cov.Organization import Organization
-    from ontopia_py.l0.Agent import Agent
-    from ontopia_py.publiccontract.Procedure import Procedure
     from ontopia_py.sm.OnlineContactPoint import OnlineContactPoint
     from ontopia_py.sm.PhysicalContactPoint import PhysicalContactPoint
     from rdflib import Graph
 
     from .CadastralData import CadastralData
+    from .ConcessionAct import ConcessionAct
 
 
 class Facility(PointOfInterest):
     __type__ = ONTOIM["Facility"]
 
     hasOfferedService: List[OSDFeature] = None
-    concessedWithProcedure: List[Procedure] = None
+    concessedWithAct: List[ConcessionAct] = None
     ownedBy: List[Organization] = None
-    concessedTo: List[Agent] = None
     hasCadastralData: List[CadastralData] = None
     hasOnlineContactPoint: OnlineContactPoint = None
     hasPhysicalContactPoint: PhysicalContactPoint = None
@@ -37,10 +35,10 @@ class Facility(PointOfInterest):
                 g.add(
                     (self.uriRef, ONTOIM["hasOfferedService"], hasOfferedService.uriRef))
 
-        if self.concessedWithProcedure:
-            for concessedWithProcedure in self.concessedWithProcedure:
+        if self.concessedWithAct:
+            for concessedWithAct in self.concessedWithAct:
                 g.add(
-                    (self.uriRef, ONTOIM["concessedWithProcedure"], concessedWithProcedure.uriRef))
+                    (self.uriRef, ONTOIM["concessedWithAct"], concessedWithAct.uriRef))
 
         if self.concessedTo:
             for concessedTo in self.concessedTo:

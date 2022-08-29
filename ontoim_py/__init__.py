@@ -38,5 +38,6 @@ def createGraph():
     g.bind("vehiclecategories", VEHICLE_CATEGORIES)
     g.bind("wastecategories", WASTE_CATEGORIES)
     g.bind("weatherconditions", WEATHER_CONDITIONS)
+    g.bind("concessionacttypes", CONCESSION_ACT_TYPES)
 
     return g
