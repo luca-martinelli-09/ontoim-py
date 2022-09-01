@@ -27,7 +27,7 @@ class DemographicObservation(Activity):
 
         if self.hasTemporalEntity:
             g.add(
-                (self.uriRef, ONTOIM["hasTemporalEntity"], self.hasTemporalEntity.uriRef))
+                (self.uriRef, TI["hasTemporalEntity"], self.hasTemporalEntity.uriRef))
 
         if self.hasDemographicReference:
             g.add((self.uriRef, ONTOIM["hasDemographicReference"],
