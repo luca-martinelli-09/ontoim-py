@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from .InvolvedObstacle import InvolvedObstacle
     from .InvolvedPerson import InvolvedPerson
     from .InvolvedVehicle import InvolvedVehicle
-    from .RevelationUnit import RevelationUnit
+    from .RelevationUnit import RelevationUnit
     from .Road import Road
     from .WeatherCondition import WeatherCondition
 
@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 class RoadAccident(EventOrSituation):
     __type__ = ONTOIM["RoadAccident"]
 
-    detectedBy: List[RevelationUnit] = None
+    detectedBy: List[RelevationUnit] = None
     hasInvolvedEntity: List[InvolvedEntity] = None
     hasInvolvedObstacle: List[InvolvedObstacle] = None
     hasInvolvedPerson: List[InvolvedPerson] = None

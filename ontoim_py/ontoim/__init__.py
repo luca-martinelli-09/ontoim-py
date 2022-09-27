@@ -49,7 +49,7 @@ from .PublicEvent import PublicEvent
 from .PublicHospital import PublicHospital
 from .PublicOrganization import PublicOrganization
 from .PublicSchool import PublicSchool
-from .RevelationUnit import RevelationUnit
+from .RelevationUnit import RelevationUnit
 from .Road import Road
 from .RoadAccident import RoadAccident
 from .RoadbedStatus import RoadbedStatus

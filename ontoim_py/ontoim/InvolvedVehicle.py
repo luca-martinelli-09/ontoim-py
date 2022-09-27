@@ -4,32 +4,29 @@ from typing import TYPE_CHECKING, List
 
 from ..ns import *
 from .InvolvedEntity import InvolvedEntity
+from .Vehicle import Vehicle
 
 if TYPE_CHECKING:
     from rdflib import Graph
 
     from .InvolvedPerson import InvolvedPerson
-    from .Vehicle import Vehicle
 
 
-class InvolvedVehicle(InvolvedEntity):
+class InvolvedVehicle(InvolvedEntity, Vehicle):
     __type__ = ONTOIM["InvolvedVehicle"]
 
     hasBackPassenger: List[InvolvedPerson] = None
     hasFrontPassenger: List[InvolvedPerson] = None
     hasPassenger: List[InvolvedPerson] = None
     hasConducent: InvolvedPerson = None
-    hasVehicle: Vehicle = None
 
     def _addProperties(self, g: Graph):
-        super()._addProperties(g)
+        super(InvolvedEntity)._addProperties(g)
+        super(Vehicle)._addProperties(g)
 
         if self.hasConducent:
             g.add((self.uriRef, ONTOIM["hasConducent"],
                   self.hasConducent.uriRef))
-
-        if self.hasVehicle:
-            g.add((self.uriRef, ONTOIM["hasVehicle"], self.hasVehicle.uriRef))
 
         if self.hasBackPassenger:
             for hasBackPassenger in self.hasBackPassenger:
